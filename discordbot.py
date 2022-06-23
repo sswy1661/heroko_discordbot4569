@@ -43,7 +43,7 @@ async def on_message(message):
     if message.author == client.user:
         return
     #如果以「巴」開頭
-    if message.content.startswith('巴'):
+    if message.content=='巴':
         
       await message.channel.send('巴哥語錄')
       else:
