@@ -45,7 +45,7 @@ async def on_message(message):
     #如果以「巴」開頭
     if message.content.startswith('巴'):
         
-      await message.channel.send(random.choice ( ['apple', 'pear', 'peach', 'orange', 'lemon'] ))
+      await message.channel.send('巴哥語錄')
       else:
         
 # Bot起動
