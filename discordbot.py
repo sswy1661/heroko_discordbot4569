@@ -1,6 +1,8 @@
 import discord
 import googletrans
 import os
+import random
+
 from pprint import pprint
 # 輸入自己Bot的TOKEN碼
 TOKEN = os.environ['TOKEN']
@@ -34,5 +36,17 @@ async def on_message(message):
             remessage = translator.translate(content, dest='zh-tw').text
             await message.reply(remessage) 
 
+@client.event
+#當有訊息時
+async def on_message(message):
+    #排除自己的訊息，避免陷入無限循環
+    if message.author == client.user:
+        return
+    #如果以「巴」開頭
+    if message.content.startswith('巴'):
+        
+      await message.channel.send(random.choice ( ['apple', 'pear', 'peach', 'orange', 'lemon'] ))
+      else:
+        
 # Bot起動
 client.run(TOKEN)
