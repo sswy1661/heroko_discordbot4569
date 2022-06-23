@@ -42,11 +42,10 @@ async def on_message(message):
     #排除自己的訊息，避免陷入無限循環
     if message.author == client.user:
         return
-    #如果以「巴」開頭
-    if message.content=='巴':
+    #如果巴哥語錄
+    if message.content =='巴哥語錄':
         
-      await message.channel.send('巴哥語錄')
-      else:
-        
+    await message.reply('巴哥語錄')
+     
 # Bot起動
 client.run(TOKEN)
